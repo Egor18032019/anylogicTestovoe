@@ -1,22 +1,42 @@
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import jsondeserialize.JsonDeserializeDateTickets;
+import jsondeserialize.JsonDeserializeTimeTickets;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import utils.Const;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
+
 @Getter
 @Setter
-@RequiredArgsConstructor
+@NoArgsConstructor
 public class Ticket {
     private String origin;
     private String origin_name;
     private String destination;
     private String destination_name;
-    private String departure_date;
-    private String departure_time;
-    private String arrival_date;
-    private String arrival_time;
+    @JsonDeserialize(using = JsonDeserializeDateTickets.class)
+    @JsonFormat(pattern = "dd.MM.yy")
+    private LocalDate departure_date;
+    @JsonDeserialize(using = JsonDeserializeTimeTickets.class)
+    @JsonFormat(pattern = "H:mm")
+    private LocalTime departure_time;
+    @JsonDeserialize(using = JsonDeserializeDateTickets.class)
+    @JsonFormat(pattern = "dd.MM.yy")
+    private LocalDate arrival_date;
+    @JsonDeserialize(using = JsonDeserializeTimeTickets.class)
+    @JsonFormat(pattern = "H:mm")
+    private LocalTime arrival_time;
     private String carrier;
     private int stops;
     private int price;
-
 
     @Override
     public String toString() {
