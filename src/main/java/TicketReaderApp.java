@@ -4,12 +4,11 @@ import lombok.experimental.FieldDefaults;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.time.Instant;
 import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class TicketReaderApp {
