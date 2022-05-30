@@ -9,7 +9,7 @@ import java.util.List;
 
 @Getter
 @JsonAutoDetect
-@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class TicketsWrapper {
 
     List<Ticket> tickets;

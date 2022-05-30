@@ -1,0 +1,7 @@
+Ticket.class
+TicketReaderApp.class
+utils\Const.class
+jsondeserialize\JsonDeserializeTimeTickets.class
+TicketsWrapper.class
+jsondeserialize\JsonDeserializeDateTickets.class
+JsonParserFileForTIckets.class
